@@ -7,8 +7,8 @@ const Hapi = require('@hapi/hapi');
 const init = async () => {
 
     const server = Hapi.server({
-        port: process.env.PORT || 3000,
-        host: 'localhost'
+        port: process.env.PORT || 3000, // Document
+        host: '0.0.0.0' // Document
     });
 
     await server.register(require('@hapi/inert'));
@@ -17,7 +17,8 @@ const init = async () => {
         method: 'GET',
         path: '/',
         handler: (request, h) => {
-            return h.file(__dirname +'\\index.html')
+            console.log(__dirname)
+            return h.file(__dirname + '/index.html')
         }
     });
 
@@ -94,12 +95,14 @@ const init = async () => {
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
+
+    server.events.on('request', (request, event, tags) => { // Document
+
+        if (tags.error) {
+            console.log(`Request ${event.request} error: ${event.error ? event.error.message : 'unknown'}`);
+        }
+    });
+
 };
-
-process.on('unhandledRejection', (err) => {
-
-    console.log(err);
-    process.exit(1);
-});
 
 init();
