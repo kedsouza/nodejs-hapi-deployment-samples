@@ -3,26 +3,15 @@ var db = new sqlite3.Database(':memory:');
 
 db.serialize(function() {
     db.run("CREATE TABLE names (name TEXT NOT NULL)");
-
-//   var stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-//   for (var i = 0; i < 10; i++) {
-//       stmt.run("Ipsum " + i);
-//   }
-//   stmt.finalize();
     db.run('INSERT INTO names VALUES (?), (?) , (?)', [ 'Bob', 'Sam', 'Jill' ], (err)=>{
         if (err) {
             console.log(err)
         } else {
-            console.log('Inserted')
+            console.log('Inserted, inital names into in-memory database.')
         }
     })
-
-    // db.each("SELECT rowid AS id, info FROM names", function(err, row) {
-    //     console.log(row.id + ": " + row.info);
-// });
 });
 
-//db.close();
 
 const getNames = () =>  {
     return new Promise((resolve, reject) => {
@@ -89,6 +78,5 @@ const deleteName = (id) => {
         })
     })
 }
-
 
 module.exports = {getNames, findName, addName, editName, deleteName}

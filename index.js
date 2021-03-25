@@ -95,9 +95,7 @@ const init = async () => {
 
     await server.start();
     console.log('Server running on %s', server.info.uri);
-
     server.events.on('request', (request, event, tags) => { // Document
-
         if (tags.error) {
             console.log(`Request ${event.request} error: ${event.error ? event.error.message : 'unknown'}`);
         }
