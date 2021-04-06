@@ -18,7 +18,7 @@
 
   More information: https://hapi.dev/api/?v=20.1.0#-serveroptionsaddress 
 
-* Consider listing to hapi request events, to log all errors thrown.
+* Consider listing to hapi request events, to log all errors.
 
   More information: https://hapi.dev/api/?v=20.1.0#server.events
 
