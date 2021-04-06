@@ -12,7 +12,8 @@
 ## Considerations before deployment to App Service
 * Make sure to reference the PORT varaible, initalizing the hapi server.
   
-  More information: https://docs.microsoft.com/en-us/azure/app-service/configure-language-nodejs?pivots=platform-linux
+  More information: ![image](https://user-images.githubusercontent.com/55401636/113750623-afb26480-96d0-11eb-9419-f80f8064fe1e.png)
+https://docs.microsoft.com/en-us/azure/app-service/configure-language-nodejs?pivots=platform-linux
 
 * Make the hapi service address is not set to 'localhost', and set to '0.0.0.0'
 
