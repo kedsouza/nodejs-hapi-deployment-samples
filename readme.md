@@ -9,9 +9,6 @@
 
 `npm start`
 
-## Deploy to Linux App Service
-There are numerous ways to deploy this sample to app services, below we will cover deployment from VSCode.
-
 ## Considerations before deployment to App Service
 * Make sure to reference the PORT varaible, initalizing the hapi server.
   
