@@ -1,4 +1,5 @@
 # Sample Hapi API Application able to deploy to Linux Azure App Services
+Hapi Dev Documentation: https://hapi.dev/tutorials/?lang=en_US
 
 ## Run Locally
 `git clone url`
